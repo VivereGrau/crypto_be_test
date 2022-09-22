@@ -15,4 +15,17 @@ class currency extends Model
         'currency_name',
         'type',
     ];
+
+    public function storage(){
+        return $this->hasMany(storage::class, "currency_id", "id");
+    }
+    public function market(){
+        return $this->hasMany(market::class, "currency_id", "id");
+    }
+    public function wallet(){
+        return $this->hasMany(wallet::class, "currency_id", "id");
+    }
+    public function history(){
+        return $this->hasMany(history::class, "currency_id", "id");
+    }
 }

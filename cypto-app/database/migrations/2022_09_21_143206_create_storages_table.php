@@ -15,8 +15,8 @@ class CreateStoragesTable extends Migration
     {
         Schema::create('storages', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('currency_id');
-            $table->string('currency_serial');
+            $table->bigInteger('currency_id')->unique();
+            $table->string('currency_serial')->unique();
             $table->timestamps();
             $table->softDeletes();
         });

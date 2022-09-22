@@ -15,4 +15,8 @@ class storage extends Model
         'currency_id',
         'currency_serial',
     ];
+
+    public function currency(){
+        return $this->belongsTo(currency::class);
+    }
 }

@@ -18,4 +18,10 @@ class market extends Model
         'total',
         'price',
     ];
+    public function currency(){
+        return $this->belongsTo(currency::class);
+    }
+    public function user(){
+        return $this->belongsTo(user::class);
+    }
 }
